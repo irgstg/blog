@@ -1,4 +1,3 @@
-# Run MTE-supported environment on QEMU
 ## Intro
 Sep 18, ARM announce a new feature which they called Memory Tagging Extension (MTE).  
 As time went by, code-support for this feature began to appear, and I found myself more and more intruiged by this feature.  
@@ -11,17 +10,17 @@ I didn't find any practical information or tutorials regarding the how-to (tried
 The how-to's are with me since then, now decided to write a little about that, might be useful for someone out there.
 
 This paper does not include any theoretical information regarding how MTE works. Instead, I assume you know the theoretical thesis behind MTE.
-Anyways, I briefly covered this subject in [What the fuss is all about?](#what-the-fuss-is-all-about?), and included some very useful references.
+Anyways, I briefly covered this subject in [What the fuss is all about?](#what-the-fuss-is-all-about), and included some very useful references.
 
 ## Sections:
-- [What all the fuss is about?](#what-the-fuss-is-all-about?)
-- [How can I raise MTE fault by myself?](#how-can-i-raise-mte-fault-by-myself?)
+- [What all the fuss is about?](#what-the-fuss-is-all-about)
+- [How can I raise MTE fault by myself?](#how-can-i-raise-mte-fault-by-myself)
 - [Compiling QEMU (in case needed)](#compile-qemu)
 - [Compiling the Kernel](#compile-the-kernel)
 - [Creating appropriate FS](#generate-fs-using-buildroot)
 - [Compile our Demo Code](#compile-our-demo-code)
 - [SEGFAULT?](#expecting-our-segmentation-fault)
-- [About the next part](#whats-next?)
+- [About the next part](#whats-next)
 
 ## What the fuss is all about?
 Although explaining MTE isn’t what this article is about (I might write another part for that dig into that in much more details), I do cover it in a nutshell.
@@ -136,7 +135,8 @@ clang -target aarch64-linux-gnu -march=armv8.5a+memtag -fsanitize=memtag mte-dem
 cd $BUILDROOT && \
 make
 ```
-*`-fsanitize=memtag` isn't a must here, because of our `glibc` support and heap-allocations*
+*`-fsanitize=memtag` isn't a must here, because of our `glibc` support and heap-allocations*  
+
 ## Expecting our Segmentation Fault
 Phew, that's has been a long process.
 Let's run our FS with the kernel (username is `root`):  
