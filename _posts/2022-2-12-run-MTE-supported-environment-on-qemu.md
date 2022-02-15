@@ -58,7 +58,7 @@ git submodule init && \
 git submodule update --recursive && \
 git submodule status --recursive && \
 mkdir build && \
-cd build && \ 
+cd build && \
 ../configure && \
 make -j$(nproc)
 ```
