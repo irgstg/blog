@@ -125,8 +125,8 @@ int main()
 As you can see, this code is very easy to understand.  
 Basically, we're allocating memory with malloc, and trying to write to memory out of our tag scope (tag alignments are by 16, didn't covered in this paper).
 If we'll see `[!] NO FAULT OCCURED...`, well, you know.
-You obviously can play with this code or try to write new one by yourself.
-Compile:
+You obviously can play with this code or try to write new one by yourself.  
+So let's:
 1. Save this code in `mte-demo.c`
 2. Generate the executable, and FS with the compiled executable:
 ```
